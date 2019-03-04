@@ -1,0 +1,31 @@
+<html>
+
+<body>
+
+<script>
+
+document.write("<b>Classrooms:</b> <br>");
+document.write("<br>")
+
+var rooms_json =
+'{ "classroom" : [ {"ID":"room7", "number_of_seats":20}, {"ID":"room8", "number_of_seats":25} ] }';
+
+room_list = JSON.parse(rooms_json)
+document.write("<br>")
+document.write("ID: ",room_list.classroom[0].ID,"<br>");
+document.write("number of seats: ",room_list.classroom[0].number_of_seats,"<br>");
+
+var classes_json =
+'{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "students":["Zendo", "Jeremiah"]},  {"subject":"Spanish", "trimester":"Spring 2019", "students":["Hamilton","Avi"]}] }';
+
+class_list = JSON.parse(classes_json)
+
+document.write("<br>")
+document.write("Subject: ",class_list.course[0].subject,"<br>");
+document.write("Trimester: ",class_list.course[0].trimester,"<br>");
+// document.write(class_list.course[0].trimester,<"br">);
+
+</script>
+
+</body>
+</html>
