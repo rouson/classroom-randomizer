@@ -34,9 +34,7 @@ const displayClassroomInfo = () => {
 displayClassroomInfo()
 
 
-
-
-
+// Damian to do  vvv
 
 // var classes_json =
 // '{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "section":"1st period",  "students":["Zendo", "Jeremiah"]}, {"subject":"Spanish 7", "trimester":"Spring 2019", "section":"2nd period", "students":["Hamilton", "Avi"]} ]}';
