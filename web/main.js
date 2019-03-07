@@ -16,15 +16,30 @@ const createRoomElement = (roomSpec) => {
   document.write(`number of seats: ${numberOfSeats}<br>`)
 }
 
-str = "<h3>" + "Room 0" + "</h2>"
-str1 = `Damien likes: apples`
+const fetchRoomData = (roomFilename) => {
+  const url = `http://localhost:8888/${roomFilename}`
 
-var roomsJson =
-'{"classroom": [ {"ID":"room7", "number_of_seats": 15}, {"ID": "room8", "number_of_seats": 25} ]}';
+  return window.fetch(url)
+    .then((response) => {
+      const dataPromise = response.json()
+      return dataPromise
+    })
+    .catch((error) => alert(`There was an error reading from the file: ${roomFilename}`))
+}
 
-roomList = JSON.parse(roomsJson).classroom
+const displayClassroomInfo = () => {
+  fetchRoomData("rooms.json").then((roomList) => {
+    roomList.forEach(createRoomElement)
+  })  
+}
 
-roomList.forEach(createRoomElement)
+
+displayClassroomInfo()
+
+
+
+
+
 
 // var classes_json =
 // '{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "section":"1st period",  "students":["Zendo", "Jeremiah"]}, {"subject":"Spanish 7", "trimester":"Spring 2019", "section":"2nd period", "students":["Hamilton", "Avi"]} ]}';
