@@ -1,0 +1,10 @@
+[
+  {
+    "ID": "room7",
+    "number_of_seats": 15
+  }, 
+  {
+    "ID": "room8",
+    "number_of_seats": 25
+  }
+]
