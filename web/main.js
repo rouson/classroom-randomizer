@@ -1,8 +1,9 @@
+const BASE_SITE = "http://localhost:8888"
+const ROOM_NUMBER_REGEX = /([a-z]+)(\d+)/i
+
 const createRoomElement = (roomSpec) => {
   const roomId = roomSpec.ID
   const numberOfSeats = roomSpec.number_of_seats
-
-  const ROOM_NUMBER_REGEX = /([a-z]+)(\d+)/i
   const match = ROOM_NUMBER_REGEX.exec(roomId)
 
   if (match === null) {
@@ -17,13 +18,10 @@ const createRoomElement = (roomSpec) => {
 }
 
 const fetchRoomData = (roomFilename) => {
-  const url = `http://localhost:8888/${roomFilename}`
+  const url = `${BASE_SITE}/${roomFilename}`
 
   return window.fetch(url)
-    .then((response) => {
-      const dataPromise = response.json()
-      return dataPromise
-    })
+    .then((response) => response.json())
     .catch((error) => alert(`There was an error reading from the file: ${roomFilename}`))
 }
 
@@ -32,7 +30,6 @@ const displayClassroomInfo = () => {
     roomList.forEach(createRoomElement)
   })  
 }
-
 
 displayClassroomInfo()
 
