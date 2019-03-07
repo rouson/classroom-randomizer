@@ -24,15 +24,10 @@ var roomsJson =
 
 roomList = JSON.parse(roomsJson).classroom
 
-createRoomElement(roomList[0])
-
-// document.write("<h3>Room 0</h2>")
-// document.write("ID: ",room_list.classroom[0].ID,"<br>");
-// document.write("number of seats: ",room_list.classroom[0].number_of_seats,"<br>");
-
-// document.write("<h3>Room 1</h2>")
-// document.write("ID: ",room_list.classroom[1].ID,"<br>");
-// document.write("number of seats: ",room_list.classroom[1].number_of_seats,"<br>");
+for (let next = 0, count = roomList.length; next < count; next++) {
+  const room = roomList[next]
+  createRoomElement(room)
+}
 
 
 // var classes_json =
