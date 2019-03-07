@@ -1,0 +1,22 @@
+{
+  "name": "classroom-randomizer",
+  "version": "1.0.0",
+  "description": "Randomize classroom seating charts",
+  "main": "main.js",
+  "scripts": {
+    "serve:data": "http-server web/data --cors -p 8888"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rouson/classroom-randomizer.git"
+  },
+  "author": "Damian Rouson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rouson/classroom-randomizer/issues"
+  },
+  "homepage": "https://github.com/rouson/classroom-randomizer#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
