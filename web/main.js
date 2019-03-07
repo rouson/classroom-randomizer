@@ -24,11 +24,7 @@ var roomsJson =
 
 roomList = JSON.parse(roomsJson).classroom
 
-for (let next = 0, count = roomList.length; next < count; next++) {
-  const room = roomList[next]
-  createRoomElement(room)
-}
-
+roomList.forEach((element) => createRoomElement(element))
 
 // var classes_json =
 // '{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "section":"1st period",  "students":["Zendo", "Jeremiah"]}, {"subject":"Spanish 7", "trimester":"Spring 2019", "section":"2nd period", "students":["Hamilton", "Avi"]} ]}';
