@@ -26,7 +26,7 @@ const fetchRoomData = (roomFilename) => {
 }
 
 const displayClassroomInfo = () => {
-  fetchRoomData("data/rooms.json").then((roomList) => {
+  fetchRoomData("web/data/rooms.json").then((roomList) => {
     roomList.forEach(createRoomElement)
   })  
 }
