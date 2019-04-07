@@ -1,3 +1,5 @@
+document.write("<h1>Classroom Seating Chart Randomizer</h1>")
+
 const BASE_SITE = "http://localhost:8888"
 const ROOM_NUMBER_REGEX = /([a-z]+)(\d+)/i
 
@@ -26,12 +28,18 @@ const fetchRoomData = (roomFilename) => {
 }
 
 const displayClassroomInfo = () => {
+  document.write("<h1> Room Data</h1>")
   fetchRoomData("web/data/rooms.json").then((roomList) => {
     roomList.forEach(createRoomElement)
   })  
 }
 
 displayClassroomInfo()
+
+const displayCourseInfo = () => {
+  document.write("Course Info")
+}
+displayCourseInfo()
 
 
 // Damian to do  vvv
