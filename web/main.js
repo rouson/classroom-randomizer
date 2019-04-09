@@ -1,62 +1,62 @@
-document.write("<h1>Classroom Seating Chart Randomizer</h1>")
+const BASE_SITE = "http://localhost:8888";
+const ROOM_NUMBER_REGEX = /([a-z]+)(\d+)/i;
 
-const BASE_SITE = "http://localhost:8888"
-const ROOM_NUMBER_REGEX = /([a-z]+)(\d+)/i
-
-const createRoomElement = (roomSpec) => {
-  const roomId = roomSpec.ID
-  const numberOfSeats = roomSpec.number_of_seats
-  const match = ROOM_NUMBER_REGEX.exec(roomId)
+const createRoomElement = roomSpec => {
+  const roomId = roomSpec.ID;
+  const numberOfSeats = roomSpec.number_of_seats;
+  const match = ROOM_NUMBER_REGEX.exec(roomId);
 
   if (match === null) {
-    throw new Error("Invalid Room Id!")
+    throw new Error("Invalid Room Id!");
   }
 
-  const roomNumber = match[2]
+  const roomNumber = match[2];
 
-  document.write(`<h2> ${roomNumber} </h2>`)
-  document.write(`ID: ${roomId}<br>`)
-  document.write(`number of seats: ${numberOfSeats}<br>`)
-}
+  const $roomDiv = $("<div>");
 
-const fetchRoomData = (roomFilename) => {
-  const url = `${BASE_SITE}/${roomFilename}`
+  $roomDiv.append(`<h2> ${roomNumber} </h2>`);
+  $roomDiv.append(`ID: ${roomId}<br>`);
+  $roomDiv.append(`number of seats: ${numberOfSeats}<br>`);
 
-  return window.fetch(url)
-    .then((response) => response.json())
-    .catch((error) => alert(`There was an error reading from the file: ${roomFilename}`))
-}
+  $("#classrooms").append($roomDiv);
+};
+
+const fetchRoomData = roomFilename => {
+  const url = `${BASE_SITE}/${roomFilename}`;
+
+  return window
+    .fetch(url)
+    .then(response => response.json())
+    .catch(error =>
+      alert(`There was an error reading from the file: ${roomFilename}`)
+    );
+};
 
 const displayClassroomInfo = () => {
-  document.write("<h1> Room Data</h1>")
-  fetchRoomData("web/data/rooms.json").then((roomList) => {
-    roomList.forEach(createRoomElement)
-  })  
-}
+  fetchRoomData("web/data/rooms.json").then(roomList => {
+    roomList.forEach(createRoomElement);
+  });
+};
 
-displayClassroomInfo()
+$(() => {
+  displayClassroomInfo();
+});
 
-const displayCourseInfo = () => {
-  document.write("Course Info")
-}
-displayCourseInfo()
+// // Damian to do  vvv
 
+// // var classes_json =
+// // '{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "section":"1st period",  "students":["Zendo", "Jeremiah"]}, {"subject":"Spanish 7", "trimester":"Spring 2019", "section":"2nd period", "students":["Hamilton", "Avi"]} ]}';
 
-// Damian to do  vvv
+// // class_list = JSON.parse(classes_json)
 
-// var classes_json =
-// '{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "section":"1st period",  "students":["Zendo", "Jeremiah"]}, {"subject":"Spanish 7", "trimester":"Spring 2019", "section":"2nd period", "students":["Hamilton", "Avi"]} ]}';
+// // document.write("<h3>Class 0</h2>")
+// // document.write("Subject: ",class_list.course[0].subject,"<br>");
+// // document.write("Trimester: ",class_list.course[0].trimester,"<br>");
+// // document.write("Section: ",class_list.course[0].section,"<br>");
+// // document.write("Students: ",class_list.course[0].students,"<br>");
 
-// class_list = JSON.parse(classes_json)
-
-// document.write("<h3>Class 0</h2>")
-// document.write("Subject: ",class_list.course[0].subject,"<br>");
-// document.write("Trimester: ",class_list.course[0].trimester,"<br>");
-// document.write("Section: ",class_list.course[0].section,"<br>");
-// document.write("Students: ",class_list.course[0].students,"<br>");
-
-// document.write("<h3>Class 1</h2>")
-// document.write("Subject: ",class_list.course[1].subject,"<br>");
-// document.write("Trimester: ",class_list.course[1].trimester,"<br>");
-// document.write("Section: ",class_list.course[1].section,"<br>");
-// document.write("Students: ",class_list.course[1].students,"<br>");
+// // document.write("<h3>Class 1</h2>")
+// // document.write("Subject: ",class_list.course[1].subject,"<br>");
+// // document.write("Trimester: ",class_list.course[1].trimester,"<br>");
+// // document.write("Section: ",class_list.course[1].section,"<br>");
+// // document.write("Students: ",class_list.course[1].students,"<br>");
