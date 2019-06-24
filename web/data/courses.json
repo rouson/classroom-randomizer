@@ -1,18 +1,5 @@
 {
-	"classroom": [{
-			"ID": "room7",
-			"number of seats": 15
-		},
-		{
-			"ID": "room8",
-			"number of seats": 15
-		},
-		{
-			"ID": "room9",
-			"number of seats": 20
-		}
-	],
-	"class": [{
+	"course": [{
 			"subject": "math 6",
 			"trimester": "Spring 2019",
 			"students": ["Alexander", "Hamilton", "Malcolm", "X"]
