@@ -1,0 +1,13 @@
+{
+	"exclude": [
+                {
+			"pair": ["Alexander", "Joe"]
+		},
+		{
+			"pair": ["Blue", "Jim"]
+		},
+		{
+			"pair": ["Jeremy", "Bill"]
+		}
+	]
+}
