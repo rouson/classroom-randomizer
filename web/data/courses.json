@@ -1,20 +1,10 @@
-{
-	"course": [{
-			"subject": "math 6",
-			"trimester": "Spring 2019",
-			"students": ["Alexander", "Hamilton", "Malcolm", "X"]
-		},
-		{
-			"subject": "math 7",
-			"trimester": "Spring 2019",
-			"section": "1st period",
-			"students": ["Zendo", "Jeremiah", "Hamilton", "Ausar"]
-
-		},
-		{
-			"subject": "spanish",
-			"trimester": "Spring 2019",
-			"students": ["Michael", "Jordan", "Steph", "Curry"]
-		}
-	]
-}
+[
+  {
+    "subject": "Spanish",
+    "term": "Fall 2019"
+  }, 
+  {
+    "subject": "Math",
+    "term": "Spring 2023"
+  }
+]
