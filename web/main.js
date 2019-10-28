@@ -21,7 +21,30 @@ const createRoomElement = roomSpec => {
   $("#classrooms").append($roomDiv);
 };
 
-const fetchRoomData = roomFilename => {
+const studentListElement = (students) => {
+  const $studentList = $("<ul>");
+
+  students.forEach(student => {
+    $studentList.append(`<li> ${student} </li>`)
+  });
+
+  return $studentList;
+};
+
+const createCourseElement = courseSpec => {
+  const {subject, trimester, students} = courseSpec;
+
+
+  const $courseDiv = $("<div>");
+
+  $courseDiv.append(`<h2> ${subject} </h2>`);
+  $courseDiv.append(`<h3> ${trimester} </h3>`);
+  $courseDiv.append(studentListElement(students));
+
+  $("#courses").append($courseDiv);
+};
+
+const fetchRoomData = (roomFilename) => {
   const url = `${BASE_SITE}/${roomFilename}`;
 
   return window
@@ -32,15 +55,48 @@ const fetchRoomData = roomFilename => {
     );
 };
 
+// const displayAllTheInfo = () => {
+//   fetchRoomData("web/data/rooms.json").then(roomList => {
+//     roomList.forEach(createRoomElement);
+//   });
+//   fetchRoomData("web/data/courses.json").then(courseList => {
+//     courseList.forEach(createCourseElement);
+//   });
+// };
+
 const displayClassroomInfo = () => {
-  fetchRoomData("web/data/rooms.json").then(roomList => {
+  return fetchRoomData("web/data/rooms.json").then(roomList => {
     roomList.forEach(createRoomElement);
   });
 };
 
-$(() => {
-  displayClassroomInfo();
-});
+const displayCoursesInfo = () => {
+  return fetchRoomData("web/data/courses.json").then(courseList => {
+    courseList.forEach(createCourseElement);
+  });
+};
+
+// const displayAllTheInfo = () => {
+//   displayClassroomInfo();
+//   displayCoursesInfo();
+// };
+
+const displayAllTheInfo = () => {
+  displayClassroomInfo()then.(displayCoursesInfo);
+};
+
+$(displayAllTheInfo);
+
+const add = (a, b) => {
+  return a + b;
+}
+
+const fullName = (firstName, lastName) => {
+  return firstName + " " + lastName;
+}
+
+
+const result = add(1, 1)
 
 // // Damian to do  vvv
 
