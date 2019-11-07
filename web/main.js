@@ -82,10 +82,11 @@ const displayCoursesInfo = () => {
 // };
 
 const displayAllTheInfo = () => {
-  displayClassroomInfo()then.(displayCoursesInfo);
+  displayClassroomInfo().then(displayCoursesInfo);
 };
 
 $(displayAllTheInfo);
+
 
 const add = (a, b) => {
   return a + b;
@@ -97,6 +98,7 @@ const fullName = (firstName, lastName) => {
 
 
 const result = add(1, 1)
+
 
 // // Damian to do  vvv
 
