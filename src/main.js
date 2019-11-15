@@ -65,13 +65,13 @@ const fetchRoomData = (roomFilename) => {
 };
 
 const displayClassroomInfo = () => {
-  return fetchRoomData("web/data/rooms.json").then(roomList => {
+  return fetchRoomData("./data/rooms.json").then(roomList => {
     roomList.forEach(createRoomElement);
   });
 };
 
 const displayCoursesInfo = () => {
-  return fetchRoomData("web/data/courses.json").then(courseList => {
+  return fetchRoomData("./data/courses.json").then(courseList => {
     courseList.forEach(createCourseElement);
   });
 };
