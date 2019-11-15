@@ -55,8 +55,6 @@ const fetchRoomData = (roomFilename) => {
     );
 };
 
-
-
 const displayClassroomInfo = () => {
   return fetchRoomData("web/data/rooms.json").then(roomList => {
     roomList.forEach(createRoomElement);
@@ -69,13 +67,8 @@ const displayCoursesInfo = () => {
   });
 };
 
-
-
 const displayAllTheInfo = () => {
   displayClassroomInfo().then(displayCoursesInfo);
 };
 
 $(displayAllTheInfo);
-
-
-
