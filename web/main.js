@@ -55,14 +55,7 @@ const fetchRoomData = (roomFilename) => {
     );
 };
 
-// const displayAllTheInfo = () => {
-//   fetchRoomData("web/data/rooms.json").then(roomList => {
-//     roomList.forEach(createRoomElement);
-//   });
-//   fetchRoomData("web/data/courses.json").then(courseList => {
-//     courseList.forEach(createCourseElement);
-//   });
-// };
+
 
 const displayClassroomInfo = () => {
   return fetchRoomData("web/data/rooms.json").then(roomList => {
@@ -76,10 +69,7 @@ const displayCoursesInfo = () => {
   });
 };
 
-// const displayAllTheInfo = () => {
-//   displayClassroomInfo();
-//   displayCoursesInfo();
-// };
+
 
 const displayAllTheInfo = () => {
   displayClassroomInfo().then(displayCoursesInfo);
@@ -88,33 +78,4 @@ const displayAllTheInfo = () => {
 $(displayAllTheInfo);
 
 
-const add = (a, b) => {
-  return a + b;
-}
 
-const fullName = (firstName, lastName) => {
-  return firstName + " " + lastName;
-}
-
-
-const result = add(1, 1)
-
-
-// // Damian to do  vvv
-
-// // var classes_json =
-// // '{ "course" : [ {"subject":"Math 7", "trimester":"Spring 2019", "section":"1st period",  "students":["Zendo", "Jeremiah"]}, {"subject":"Spanish 7", "trimester":"Spring 2019", "section":"2nd period", "students":["Hamilton", "Avi"]} ]}';
-
-// // class_list = JSON.parse(classes_json)
-
-// // document.write("<h3>Class 0</h2>")
-// // document.write("Subject: ",class_list.course[0].subject,"<br>");
-// // document.write("Trimester: ",class_list.course[0].trimester,"<br>");
-// // document.write("Section: ",class_list.course[0].section,"<br>");
-// // document.write("Students: ",class_list.course[0].students,"<br>");
-
-// // document.write("<h3>Class 1</h2>")
-// // document.write("Subject: ",class_list.course[1].subject,"<br>");
-// // document.write("Trimester: ",class_list.course[1].trimester,"<br>");
-// // document.write("Section: ",class_list.course[1].section,"<br>");
-// // document.write("Students: ",class_list.course[1].students,"<br>");
