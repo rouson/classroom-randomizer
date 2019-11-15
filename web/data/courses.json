@@ -2,16 +2,16 @@
   {
     "subject": "math 6",
     "trimester": "Spring 2019",
-    "students": ["Alexander", "Hamilton", "Malcolm", "X"]
+    "students": ["Edward", "Hamilton", "Benjamin", "Lazlo"]
   },
   {
-    "subject": "math 7",
+    "subject": "math 8",
     "trimester": "Spring 2019",
-    "students": ["Zendo", "Jeremiah", "Hamilton", "Ausar"]
+    "students": ["Zendo", "Jeremiah", "Sebastian", "Ausar"]
   },
   {
-    "subject": "spanish 666",
+    "subject": "spanish 7",
     "trimester": "Spring 2019",
-    "students": ["Michael", "Jordan", "Steph", "Curry"]
+    "students": ["Cuba", "Yuri", "Dillon", "Henry"]
   }
 ]
