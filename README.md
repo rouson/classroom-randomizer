@@ -1,7 +1,7 @@
 # Classroom Seating Chart Randomizer
 Randomize classroom seating charts
 
-## Launching the app
+## Launching and using the app
 1. Launch a simple HTTP server with Cross-Origin Resource Service
 (CORS) enabled:
 ```
@@ -13,7 +13,7 @@ The above port number must match the port number specified in
 2. Open a browser to http://localhost:8888
 3. Click web.
 4. Click parse-json.html.
-5. Reload the page to display the student names in a new, randomly shuffled order.
+5. Reload the page to shuffle student positions.
 
 ## Changing the classroom and student data
 To update the classroom informaton or student rosters, edit the following files:
