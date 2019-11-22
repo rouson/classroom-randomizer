@@ -1,0 +1,17 @@
+[
+  {
+    "subject": "math 6",
+    "trimester": "Fall 2019",
+    "students": ["Edward", "Hamilton", "Benjamin", "Lazlo"]
+  },
+  {
+    "subject": "math 8",
+    "trimester": "Winter 2020",
+    "students": ["Zendo", "Jeremiah", "Sebastian", "Ausar"]
+  },
+  {
+    "subject": "spanish 7",
+    "trimester": "Spring 2020",
+    "students": ["Cuba", "Yuri", "Dillon", "Henry"]
+  }
+]
