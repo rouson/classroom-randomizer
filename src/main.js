@@ -48,7 +48,9 @@ const createCourseElement = courseSpec => {
 
   $courseDiv.append(`<h2> ${subject} </h2>`);
   $courseDiv.append(`<h3> ${trimester} </h3>`);
+  $courseDiv.append(`<ol>`);
   $courseDiv.append(studentListElement(shuffle(students)));
+  $courseDiv.append(`</ol>`);
 
   $("#courses").append($courseDiv);
 };
